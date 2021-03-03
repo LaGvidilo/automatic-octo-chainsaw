@@ -34,6 +34,12 @@ import time
 from datetime import datetime
 #==============================
 def create_app():
+    app = Flask(__name__,template_folder="templates",static_folder="static")
+    app.secret_key = os.urandom(4096)
+    app.WTF_CSRF_SECRET_KEY = os.urandom(4096)
+    #CORS(app)
+    csrf = CSRFProtect()
+    csrf.init_app(app)
     #==================================================
     @app.route('/about',methods=["GET"])
     def about_the_node_func():
