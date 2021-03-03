@@ -14,7 +14,7 @@ The Document can be understanding and totally visible after this points deps of:
 - [x] THE REAL TOOLS CREATION IS STARTED(15minutes)
 - [ ] THE AOC HAVE AN DYNAMICAL GENERATION OF INCRUSTING DATA IN IMAGE(ONLY AN TEST IMAGE) (1-2hours)
 - [x] LOAD ASSETS FOR PRESENTATION
-- [ ] CONFIGURE THE SERVER TEST
+- [x] CONFIGURE THE SERVER TEST
 
 ===
 Start: 16:06, 3 march of 2021
@@ -25,7 +25,7 @@ Comment: I have so many fear to fail mixed with the motivation to success and ge
 
 # PLAN DELTA
 
-## THE OPENSOURCE UNIVERSITY HEAD QUARTER'S FOR SAVE MISSION. ![Downloads](http://distant.oac.mlp.informabox.tech/static/IMG_0945.GIF)
+## THE OPENSOURCE UNIVERSITY HEAD QUARTER'S FOR SAVE MISSION. ![Downloads](https://distant.oac.mlp.informabox.tech/static/IMG_0945.GIF)
 
 ------
 
@@ -36,4 +36,4 @@ COMPUTER'S MONITOR FROM RICK IS [HERE](https://app.netdata.cloud/spaces/labo-de-
 Okay ...
 
 ## *HELLO IT'S RICK SANCHEZ FROM D-634, I M LOST LOCALLY HERE ON EARTH BUT NOT IN MY MINDSET, IT'S ME BITCH'S!!!*
-![Downloads](http://distant.oac.mlp.informabox.tech/static/ricksanchez_tvshow_1.jpg)
+![Downloads](https://distant.oac.mlp.informabox.tech/static/ricksanchez_tvshow_1.jpg)
