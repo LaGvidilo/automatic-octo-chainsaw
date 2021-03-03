@@ -13,7 +13,7 @@ import requests
 import json
 from datetime import datetime
 from flask_wtf.csrf import CSRFProtect
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 # =====================================
 from multiprocessing import Process
 # =====================================
@@ -44,11 +44,13 @@ def create_app():
     #==================================================
     @app.route('/get_badge_meteo_outdoor',methods=["GET"])
     def about_the_node_func():
-        with Image.open("assets/button1_normal.png") as im:
+        with Image.open("assets/button1_pushed.png") as im:
             imd = ImageDraw.Draw(im)
-            imd.text((im.size[0]/2,im.size[1]/2),"Hello",align="center")
+            fontsize = 11
+            font = ImageFont.truetype("arial.ttf", fontsize)
+            imd.text((im.size[0]/4,im.size[1]/2.8),"Hello",fill=(0,0,0),font=font)
             im.save("static/img1_meteo.png")
-        return render_template("test_construct_1.tpl")
+        return app.send_static_file("img1_meteo.png")#render_template("test_construct_1.tpl")
     #==================================================
     #for just use... you know... that:
     #app.run("127.0.0.1",8000,True)
