@@ -13,6 +13,7 @@ import requests
 import json
 from datetime import datetime
 from flask_wtf.csrf import CSRFProtect
+from PIL import Image
 # =====================================
 from multiprocessing import Process
 # =====================================
@@ -41,11 +42,12 @@ def create_app():
     csrf = CSRFProtect()
     csrf.init_app(app)
     #==================================================
-    @app.route('/about',methods=["GET"])
+    @app.route('/get_badge_meteo_outdoor',methods=["GET"])
     def about_the_node_func():
-        #Note:  None values is just because the Token motor are not finish now so ...
-        #       Is in Two-Parts between the central and the node... hold on... 
-        return "Hello Rick."
+        with Image.open("button1_normal.png") as im:
+            im.text((im.size[0]/2,im.size[1]/2,"Hello",align="center"))
+            im.save("/static/img1_meteo.png")
+        return templates("test_construct_1.tpl")
     #==================================================
     #for just use... you know... that:
     #app.run("127.0.0.1",8000,True)
