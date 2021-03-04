@@ -33,6 +33,7 @@ def filter_no_smoke(strarg):
 #==============================
 import time
 from datetime import datetime
+import urllib3
 #==============================
 def create_app():
     app = Flask(__name__,template_folder="templates",static_folder="static")
@@ -42,15 +43,63 @@ def create_app():
     csrf = CSRFProtect()
     csrf.init_app(app)
     #==================================================
-    @app.route('/get_badge_meteo_outdoor',methods=["GET"])
-    def about_the_node_func():
+    @app.route('/get_badge_meteo/H/IN',methods=["GET"])
+    def getter_badge_humidity_in():
+        http = urllib3.PoolManager()
+        url = http.request('GET', 'https://meteo.local.rick.informabox.tech/call/DHT11-SENSORS/o1/1')
+        code = url.data
+        json_data = json.loads(code)
         with Image.open("assets/button1_pushed.png") as im:
             imd = ImageDraw.Draw(im)
             fontsize = 11
             font = ImageFont.truetype("arial.ttf", fontsize)
-            imd.text((im.size[0]/4,im.size[1]/2.8),"Hello",fill=(0,0,0),font=font)
+            imd.text((im.size[0]/4,im.size[1]/2.8),"{}%".format(str(json_data["humidity_IN"])),fill=(0,0,0),font=font)
             im.save("static/img1_meteo.png")
-        return app.send_static_file("img1_meteo.png")#render_template("test_construct_1.tpl")
+        return app.send_static_file("img1_meteo.png")
+    #==============================
+    @app.route('/get_badge_meteo/H/OUT',methods=["GET"])
+    def getter_badge_humidity_out():
+        http = urllib3.PoolManager()
+        url = http.request('GET', 'https://meteo.local.rick.informabox.tech/call/DHT11-SENSORS/o1/1')
+        code = url.data
+        json_data = json.loads(code)
+        with Image.open("assets/button1_pushed.png") as im:
+            imd = ImageDraw.Draw(im)
+            fontsize = 11
+            font = ImageFont.truetype("arial.ttf", fontsize)
+            imd.text((im.size[0]/4,im.size[1]/2.8),"{}%".format(str(json_data["humidity_OUT"])),fill=(0,0,0),font=font)
+            im.save("static/img1_meteo.png")
+        return app.send_static_file("img1_meteo.png")
+    #==============================
+    @app.route('/get_badge_meteo/T/IN',methods=["GET"])
+    def getter_badge_temperature_in():
+        http = urllib3.PoolManager()
+        url = http.request('GET', 'https://meteo.local.rick.informabox.tech/call/DHT11-SENSORS/o1/1')
+        code = url.data
+        json_data = json.loads(code)
+        with Image.open("assets/button1_pushed.png") as im:
+            imd = ImageDraw.Draw(im)
+            fontsize = 11
+            font = ImageFont.truetype("arial.ttf", fontsize)
+            imd.text((im.size[0]/4,im.size[1]/2.8),"{}°C".format(str(json_data["temperature_IN"])),fill=(0,0,0),font=font)
+            im.save("static/img1_meteo.png")
+        return app.send_static_file("img1_meteo.png")
+    #==============================
+    @app.route('/get_badge_meteo/T/OUT',methods=["GET"])
+    def getter_badge_temperature_out():
+        http = urllib3.PoolManager()
+        url = http.request('GET', 'https://meteo.local.rick.informabox.tech/call/DHT11-SENSORS/o1/1')
+        code = url.data
+        json_data = json.loads(code)
+        with Image.open("assets/button1_pushed.png") as im:
+            imd = ImageDraw.Draw(im)
+            fontsize = 11
+            font = ImageFont.truetype("arial.ttf", fontsize)
+            imd.text((im.size[0]/4,im.size[1]/2.8),"{}°C".format(str(json_data["temperature_OUT"])),fill=(0,0,0),font=font)
+            im.save("static/img1_meteo.png")
+        return app.send_static_file("img1_meteo.png")
+    #==============================
+
     #==================================================
     #for just use... you know... that:
     #app.run("127.0.0.1",8000,True)
