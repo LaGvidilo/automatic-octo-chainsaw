@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: socialcloud
+    restart: always
+    ports:
+      - 9101:80
+    volumes:
+      - server:/var/server
+
+volumes:
+  server:
+
+
