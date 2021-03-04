@@ -54,8 +54,8 @@ def create_app():
             fontsize = 11
             font = ImageFont.truetype("arial.ttf", fontsize)
             imd.text((im.size[0]/4,im.size[1]/2.8),"{}%".format(str(json_data["humidity_IN"])),fill=(0,0,0),font=font)
-            im.save("static/img1_meteo.png")
-        return app.send_static_file("img1_meteo.png")
+            im.save("static/img0_meteo.png")
+        return app.send_static_file("img0_meteo.png")
     #==============================
     @app.route('/get_badge_meteo/H/OUT',methods=["GET"])
     def getter_badge_humidity_out():
@@ -82,8 +82,8 @@ def create_app():
             fontsize = 11
             font = ImageFont.truetype("arial.ttf", fontsize)
             imd.text((im.size[0]/4,im.size[1]/2.8),"{}°C".format(str(json_data["temperature_IN"])),fill=(0,0,0),font=font)
-            im.save("static/img1_meteo.png")
-        return app.send_static_file("img1_meteo.png")
+            im.save("static/img2_meteo.png")
+        return app.send_static_file("img2_meteo.png")
     #==============================
     @app.route('/get_badge_meteo/T/OUT',methods=["GET"])
     def getter_badge_temperature_out():
@@ -96,8 +96,8 @@ def create_app():
             fontsize = 11
             font = ImageFont.truetype("arial.ttf", fontsize)
             imd.text((im.size[0]/4,im.size[1]/2.8),"{}°C".format(str(json_data["temperature_OUT"])),fill=(0,0,0),font=font)
-            im.save("static/img1_meteo.png")
-        return app.send_static_file("img1_meteo.png")
+            im.save("static/img3_meteo.png")
+        return app.send_static_file("img3_meteo.png")
     #==============================
 
     #==================================================
