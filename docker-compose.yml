@@ -3,12 +3,12 @@ version: '3'
 services:
   app:
     build: .
-    container_name: socialcloud
+    container_name: aoc
     restart: always
     ports:
-      - 9101:80
+      - 8005:8005
     volumes:
-      - server:/var/server
+      - server:/mnt/Docker/server
 
 volumes:
   server:
