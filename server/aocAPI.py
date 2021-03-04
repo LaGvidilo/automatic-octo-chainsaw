@@ -34,6 +34,7 @@ def filter_no_smoke(strarg):
 import time
 from datetime import datetime
 import urllib3
+import markdown as md
 #==============================
 def create_app():
     app = Flask(__name__,template_folder="templates",static_folder="static")
@@ -99,7 +100,12 @@ def create_app():
             im.save("static/img3_meteo.png")
         return app.send_static_file("img3_meteo.png")
     #==============================
-
+    @app.route('/',methods=["GET"])
+    def webview_out():
+        with open("templates/webview.md",'rb') as f:
+            d=f.read().decode()
+            f.close()
+        return md.markdown(d)
     #==================================================
     #for just use... you know... that:
     #app.run("127.0.0.1",8005,True)
