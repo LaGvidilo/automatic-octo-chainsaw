@@ -1,1 +1,0 @@
-<img src="/static/img1_meteo.png"></img>
