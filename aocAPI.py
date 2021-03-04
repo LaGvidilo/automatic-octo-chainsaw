@@ -102,7 +102,7 @@ def create_app():
 
     #==================================================
     #for just use... you know... that:
-    #app.run("127.0.0.1",8000,True)
-    #or launch command: gunicorn3 -b '127.0.0.1':'8000' --workers=2 'nodeAPI:create_app()'
+    #app.run("127.0.0.1",8005,True)
+    #or launch command: gunicorn3 -b '127.0.0.1':'8005' --workers=4 'aocAPI:create_app()'
     return app
 #============================================================
