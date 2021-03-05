@@ -13,8 +13,6 @@ The last shortcut way to possibly made everyone happy. If I success to do...
 # CURRENTS INFORMATIONS
 
 **Original Tech OF THE AOC**: [GitHub](https://github.com/LaGvidilo/automatic-octo-chainsaw)
-__ AOC IS THE CURRENT TOOL & MOTOR NEEDED __
-__ BE PATIENT I RUSH TO DO __
 
 The Document can be understanding and totally visible after this points deps of:
 - [x] THE AOC API HAVE BEEN INSPIRATE PARTS TO MADE FAST AN STATIC SENDER (25-50 minutes)
