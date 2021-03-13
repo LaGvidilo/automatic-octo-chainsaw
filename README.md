@@ -1,4 +1,7 @@
 # automatic-octo-chainsaw
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/40f3d64a95cf42a0a812701c497f6e9a)](https://app.codacy.com/gh/LaGvidilo/automatic-octo-chainsaw?utm_source=github.com&utm_medium=referral&utm_content=LaGvidilo/automatic-octo-chainsaw&utm_campaign=Badge_Grade_Settings)
+
 The last shortcut way to possibly made everyone happy. If I success to do...
 
 # INCRUSTRATION BADGE GENERATOR IN A WEBAPI - RESULTS:
